@@ -72,10 +72,10 @@ module Frameworks
     @path = 'sinatra'
     
     def start
-      execute %{./sinatra-app.rb start -- -e production -p #{port}}
+      execute %{./sinatra-app.rb start -- production #{port}}
     end
     def stop
-      execute %{./sinatra-app.rb stop -- -e production -p #{port}}
+      execute %{./sinatra-app.rb stop -- production #{port}}
     end
   end
 end

@@ -8,13 +8,8 @@ Daemons.run_proc('sinatra-daemon', :log_output => 'sinatra.log') do
   Dir.chdir(__DIR__)
   ARGV.shift
   ARGV.shift
-  
-  require 'sinatra'
-  get '/' do
-    %{Hi, I'm a small Sinatra application!}
-  end
-  
-  if Sinatra.application.options.run
-    Sinatra.run
-  end
+  env = ARGV.shift
+  port = ARGV.shift
+
+  exec "ruby sinatra-hi.rb -e #{env} -p #{port}"
 end
