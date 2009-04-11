@@ -36,7 +36,7 @@ module Frameworks
     @path = "ramaze"
   
     def start 
-      execute "ramaze"
+      execute "ramaze -d start"
     end
     def stop
       execute "ramaze -d stop"

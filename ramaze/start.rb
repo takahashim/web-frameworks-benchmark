@@ -2,8 +2,12 @@
 require 'rubygems'
 require 'ramaze'
 
-# require all controllers and models
-acquire __DIR__/:controller/'*'
-acquire __DIR__/:model/'*'
+# Add directory start.rb is in to the load path, so you can run the app from
+# any other working path
+$LOAD_PATH.unshift(__DIR__)
 
-Ramaze.start :adapter => :mongrel, :port => 7000
+# Initialize controllers and models
+require 'controller/init'
+require 'model/init'
+
+Ramaze.start :adapter => :webrick, :port => 7000
