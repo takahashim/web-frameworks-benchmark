@@ -39,5 +39,6 @@ Merb::Router.prepare do
   # clients from calling your create or destroy actions with a GET
   # this slows routing down ---> default_routes
   
+  # Change this for your home page to be available at /
   match('/').to(:controller => 'regular', :action =>'index')
 end
